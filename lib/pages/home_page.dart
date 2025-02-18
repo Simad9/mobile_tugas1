@@ -79,10 +79,14 @@ class HomePage extends StatelessWidget {
                       mainAxisSpacing: 20,
                       padding: EdgeInsets.all(20),
                       children: [
-                        customButton(Icons.groups_2_outlined, "Team Kami"),
-                        customButton(Icons.calculate_outlined, "Hitung"),
-                        customButton(Icons.filter_list_rounded, "Genap Ganjil"),
-                        customButton(Icons.compare_arrows_rounded, "Max Min"),
+                        customButton(Icons.groups_2_outlined, "Team Kami",
+                            context, TeamkamiPage()),
+                        customButton(Icons.calculate_outlined, "Hitung",
+                            context, HitungPage()),
+                        customButton(Icons.filter_list_rounded, "Genap Ganjil",
+                            context, GenapganjilPage()),
+                        customButton(Icons.compare_arrows_rounded, "Max Min",
+                            context, MaxminPage()),
                       ],
                     ),
                   ),
@@ -124,10 +128,12 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget customButton(IconData icon, String label) {
+  Widget customButton(
+      IconData icon, String label, BuildContext context, Widget widget) {
     return GestureDetector(
       onTap: () {
-        // Add navigation or action here
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => widget));
       },
       child: Container(
         decoration: BoxDecoration(
