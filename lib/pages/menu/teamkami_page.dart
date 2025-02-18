@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BilanganPage extends StatelessWidget {
-  const BilanganPage({super.key});
+class TeamkamiPage extends StatelessWidget {
+  const TeamkamiPage({super.key});
 
   @override
   Widget build(BuildContext context) {

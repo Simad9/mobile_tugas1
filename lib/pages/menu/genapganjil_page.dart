@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class KalkulatorPage extends StatelessWidget {
-  const KalkulatorPage({super.key});
+class GenapganjilPage extends StatelessWidget {
+  const GenapganjilPage({super.key});
 
   @override
   Widget build(BuildContext context) {
