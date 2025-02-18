@@ -7,53 +7,154 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-      ),
-      body: Center(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerRight,
+            end: Alignment.centerLeft,
+            colors: [
+              Color(0xff4DC5F2),
+              Color(0xffFF61E4),
+            ],
+          ),
+        ),
         child: Column(
           children: [
-            Text('Home Page'),
-            Text("Selamat datang di Home Page"),
-            SizedBox(height: 30),
-            buttonPrimary(context, 'Kalkulator', KalkulatorPage()),
-            buttonPrimary(context, "Bilangan Bulat", BilanganPage()),
-            buttonLogout(context, "Keluar")
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Halo, bang",
+                      style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Silahkan pilih menu dibawah ini",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(
+                  left: 20, right: 20, top: 30, bottom: 60),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text("Menu",
+                        style: TextStyle(
+                            fontSize: 36, fontWeight: FontWeight.bold)),
+                  ),
+                  SizedBox(height: 10),
+
+                  // Menu Box
+                  Center(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      shrinkWrap: true,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
+                      padding: EdgeInsets.all(20),
+                      children: [
+                        customButton(Icons.groups_2_outlined, "Team Kami"),
+                        customButton(Icons.calculate_outlined, "Hitung"),
+                        customButton(Icons.filter_list_rounded, "Genap Ganjil"),
+                        customButton(Icons.compare_arrows_rounded, "Max Min"),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30),
+
+                  // Tombol Keluar
+                  _buttonHitam(context),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget buttonPrimary(BuildContext context, String text, Widget page) {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => page));
-        },
+  Widget _buttonHitam(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          backgroundColor: Color(0xFF4CA2FF),
+          backgroundColor: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
         ),
-        child: Text(text,
-            style:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.bold)));
+        onPressed: () {
+          // Implement login logic here
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => LoginPage()));
+        },
+        child: const Text(
+          "Keluar",
+          style: TextStyle(
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
+        ),
+      ),
+    );
   }
 
-  Widget buttonLogout(BuildContext context, String text) {
-    return ElevatedButton(
-        onPressed: () {
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
-              (route) => false);
-        },
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          backgroundColor: Color(0xFF4CA2FF),
+  Widget customButton(IconData icon, String label) {
+    return GestureDetector(
+      onTap: () {
+        // Add navigation or action here
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 3,
+              blurRadius: 5,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
-        child: Text(text,
-            style:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.bold)));
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 40, color: Colors.black),
+            SizedBox(height: 10),
+            Text(
+              label,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -83,7 +83,7 @@ class WelcomePage extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
           ),
         ),
         onPressed: () {
@@ -93,7 +93,7 @@ class WelcomePage extends StatelessWidget {
         child: Text(
           "Lanjutkan",
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.black54,
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),

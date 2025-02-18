@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/import/all_pages.dart';
-// import '../import/all_pages.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -135,7 +134,7 @@ class LoginPage extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
           ),
         ),
         onPressed: () {
