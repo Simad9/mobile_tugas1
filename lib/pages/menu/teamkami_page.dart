@@ -36,19 +36,31 @@ class TeamkamiPage extends StatelessWidget {
             ),
 
             // Foto kami
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 16,
-                childAspectRatio: 1.1,
+            // Expanded(
+            //   child: GridView.count(
+            //     crossAxisCount: 2,
+            //     crossAxisSpacing: 12,
+            //     mainAxisSpacing: 16,
+            //     childAspectRatio: 1.1,
+            //     children: [
+            //       boxFoto("images/foto1.png", "WIJDAN AKHMAD S", "12320010"),
+            //       boxFoto("images/foto1.png", "AQSHA JAUZAARAFA", "12320016"),
+            //       boxFoto("images/foto1.png", "VRIDA PUSPARANI", "12320082"),
+            //     ],
+            //   ),
+            // ),
+            Center(
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20, // Jarak antar elemen
+                runSpacing: 20, // Jarak antar baris
                 children: [
                   boxFoto("images/foto1.png", "WIJDAN AKHMAD S", "12320010"),
                   boxFoto("images/foto1.png", "AQSHA JAUZAARAFA", "12320016"),
                   boxFoto("images/foto1.png", "VRIDA PUSPARANI", "12320082"),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
@@ -57,6 +69,7 @@ class TeamkamiPage extends StatelessWidget {
 
   Widget boxFoto(String path, String nama, String nim) {
     return Container(
+      width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
@@ -76,8 +89,8 @@ class TeamkamiPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
               path,
-              width: 98,
-              height: 98,
+              width: 100,
+              height: 100,
             ),
           ),
           SizedBox(height: 5),
@@ -86,11 +99,11 @@ class TeamkamiPage extends StatelessWidget {
             style: TextStyle(
                 fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
           ),
-          Text(nim,
-              style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white)),
+          Text(
+            nim,
+            style: TextStyle(
+                fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
         ],
       ),
     );

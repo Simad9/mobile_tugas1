@@ -85,12 +85,15 @@ class HomePage extends StatelessWidget {
                             context, HitungPage()),
                         customButton(Icons.filter_list_rounded, "Genap Ganjil",
                             context, GenapganjilPage()),
-                        customButton(Icons.compare_arrows_rounded, "Max Min",
-                            context, MaxminPage()),
+                        customButton(
+                            Icons.functions, "Digit", context, DigitPage()),
+                        // customButton(
+                        //     Icons.functions, "Hitung", context, MaxminPage()),
                       ],
                     ),
                   ),
                   SizedBox(height: 30),
+                  // _buttonTeam(context),
 
                   // Tombol Keluar
                   _buttonHitam(context),
@@ -102,6 +105,35 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  // Widget _buttonTeam(BuildContext context) {
+  //   return SizedBox(
+  //     width: double.infinity,
+  //     height: 50,
+  //     child: ElevatedButton.icon(
+  //       style: ElevatedButton.styleFrom(
+  //         backgroundColor: Colors.white,
+  //         shape: RoundedRectangleBorder(
+  //           borderRadius: BorderRadius.circular(30),
+  //         ),
+  //       ),
+  //       onPressed: () {
+  //         // Implement login logic here
+  //         Navigator.pushReplacement(
+  //             context, MaterialPageRoute(builder: (context) => TeamkamiPage()));
+  //       },
+  //       icon: Icon(
+  //         Icons.groups_2_outlined,
+  //         color: Colors.black54,
+  //       ),
+  //       label: Text(
+  //         "Team Kami",
+  //         style: TextStyle(
+  //             color: Colors.black54, fontSize: 20, fontWeight: FontWeight.w500),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget _buttonHitam(BuildContext context) {
     return SizedBox(

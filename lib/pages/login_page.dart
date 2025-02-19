@@ -138,9 +138,17 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          // Implement login logic here
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => HomePage()));
+          if (usernameController.text == "admin" &&
+              passwordController.text == "admin") {
+            // Implement login logic here
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          } else {
+            // Tampilkan pesan error jika username atau password salah
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("Username atau password salah")),
+            );
+          }
         },
         child: const Text(
           "Masuk",

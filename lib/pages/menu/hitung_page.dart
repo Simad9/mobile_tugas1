@@ -15,6 +15,12 @@ class _HitungPageState extends State<HitungPage> {
   String operator = "+";
 
   void calculate(String operation) {
+    // Control Handling
+    if (num1Controller.text.isEmpty || num2Controller.text.isEmpty) {
+      return;
+    }
+
+    // Fungsi
     double num1 = double.tryParse(num1Controller.text) ?? 0;
     double num2 = double.tryParse(num2Controller.text) ?? 0;
     double res = 0;
@@ -113,6 +119,7 @@ class _HitungPageState extends State<HitungPage> {
                   operator == "" ? '+' : operator,
                   style: TextStyle(
                       fontSize: 20,
+             
                       color: Colors.white,
                       fontWeight: FontWeight.w500),
                 ),

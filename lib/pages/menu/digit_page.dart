@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../import/all_pages.dart';
 
-class GenapganjilPage extends StatefulWidget {
-  const GenapganjilPage({super.key});
+class DigitPage extends StatefulWidget {
+  const DigitPage({super.key});
 
   @override
-  State<GenapganjilPage> createState() => _GenapganjilPageState();
+  State<DigitPage> createState() => _DigitPageState();
 }
 
-class _GenapganjilPageState extends State<GenapganjilPage> {
+class _DigitPageState extends State<DigitPage> {
   final TextEditingController angkaController = TextEditingController();
   String angka = "Angka";
 
@@ -17,21 +17,14 @@ class _GenapganjilPageState extends State<GenapganjilPage> {
       return;
     }
 
-    int num = int.tryParse(angkaController.text) ?? 0;
-
-    if (num % 2 == 0) {
-      angka = "Genap";
-    } else {
-      angka = "Ganjil";
-    }
+    int length = angkaController.text.length;
 
     setState(() {
-      angka = angka;
+      angka = '$length Digit';
     });
   }
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
@@ -57,7 +50,7 @@ class _GenapganjilPageState extends State<GenapganjilPage> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Genap Ganjil",
+              "Digit",
               style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             ),
           ),
@@ -70,7 +63,7 @@ class _GenapganjilPageState extends State<GenapganjilPage> {
           // Input Username
           TextField(
             controller: angkaController,
-             keyboardType: TextInputType.number,
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
               hintText: "Angka",
               filled: true,
