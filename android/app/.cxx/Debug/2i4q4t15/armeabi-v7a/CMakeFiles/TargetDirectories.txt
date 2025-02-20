@@ -1,0 +1,2 @@
+C:/Users/ASUS/mobile_tugas1/android/app/.cxx/Debug/2i4q4t15/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/ASUS/mobile_tugas1/android/app/.cxx/Debug/2i4q4t15/armeabi-v7a/CMakeFiles/rebuild_cache.dir
