@@ -36,6 +36,8 @@ class _HitungPageState extends State<HitungPage> {
       return;
     }
     double res = 0;
+    String errorMessage = "";
+
     switch (operation) {
       case '+':
         res = num1 + num2;
@@ -47,9 +49,21 @@ class _HitungPageState extends State<HitungPage> {
         res = num1 * num2;
         break;
       case '/':
-        res = num2 != 0 ? num1 / num2 : 0;
+        if(num2 == 0) {
+          errorMessage = "Tidak dapat dibagi dengan 0";
+        } else {
+          res = num1 / num2;
+        }
         break;
     }
+
+    if (errorMessage.isNotEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage)),
+      );
+      return;
+    }
+    
     res = double.parse(res.toStringAsFixed(4));
     setState(() {
       result = res.toString();
@@ -93,7 +107,7 @@ class _HitungPageState extends State<HitungPage> {
             ),
             SizedBox(height: 20),
             Text(
-              "Silahkan masukan angka dibawah",
+              "Silakan masukkan angka di bawah",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 20),
