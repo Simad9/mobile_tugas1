@@ -49,18 +49,20 @@ class TeamkamiPage extends StatelessWidget {
             //     ],
             //   ),
             // ),
+            //memberi jarak
+            SizedBox(height: 60),
             Center(
               child: Wrap(
                 alignment: WrapAlignment.center,
                 spacing: 20, // Jarak antar elemen
                 runSpacing: 20, // Jarak antar baris
                 children: [
-                  boxFoto("images/foto1.png", "WIJDAN AKHMAD S", "12320010"),
-                  boxFoto("images/foto1.png", "AQSHA JAUZAARAFA", "12320016"),
-                  boxFoto("images/foto1.png", "VRIDA PUSPARANI", "12320082"),
+                  boxFoto("images/fotowijdan.jpg", "WIJDAN AKHMAD S", "12320010"),
+                  boxFoto("images/fotoaqsha.jpg", "AQSHA JAUZAARAFA'", "12320016"),
+                  boxFoto("images/fotorani.jpg", "VRIDA PUSPARANI", "12320082"),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
