@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Pagi pagi pergi kepasar membeli lele. Sebelum masuk loginkan dulu le.",
+                      "Pagi pagi pergi ke pasar membeli lele. Sebelum masuk loginkan dulu le.",
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -141,8 +141,14 @@ class LoginPage extends StatelessWidget {
           if (usernameController.text == "admin" &&
               passwordController.text == "admin") {
             // Implement login logic here
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+            FocusScope.of(context).unfocus();
+
+            Future.delayed(Duration(milliseconds: 300), ()
+            {
+              Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            });
           } else {
             // Tampilkan pesan error jika username atau password salah
             ScaffoldMessenger.of(context).showSnackBar(
