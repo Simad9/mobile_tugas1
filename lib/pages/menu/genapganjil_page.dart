@@ -74,7 +74,7 @@ class _GenapganjilPageState extends State<GenapganjilPage> {
             ),
             SizedBox(height: 20),
             Text(
-              "Silahkan masukan angka dibawah",
+              "Silakan masukkan angka di bawah",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 20),
