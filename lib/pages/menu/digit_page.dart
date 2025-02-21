@@ -11,7 +11,10 @@ class DigitPage extends StatefulWidget {
 class _DigitPageState extends State<DigitPage> {
   final TextEditingController textController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  String result = "Hasil";
+  String resultHuruf = "Jumlah huruf";
+  String resultAngka = "Jumlah angka";
+  String resultKarakter = "Jumlah karakter khusus";
+
   String errorText = "";
   void cek() {
     if (textController.text.isEmpty) {
@@ -41,9 +44,9 @@ class _DigitPageState extends State<DigitPage> {
       }
     }
     setState(() {
-      result = 'Huruf: $letterCount, '
-          'Digit: $digitCount, '
-          'Karakter Khusus: $specialCharCount';
+      resultHuruf = 'Huruf: $letterCount';
+      resultAngka = 'Angka: $digitCount';
+      resultKarakter = 'Karakter Khusus: $specialCharCount';
       errorText = "";
     });
     _focusNode.unfocus();
@@ -88,7 +91,7 @@ class _DigitPageState extends State<DigitPage> {
               ),
               SizedBox(height: 20),
               Text(
-                "Silahkan masukan apapun dibawah",
+                "Silakan masukkan apapun di bawah",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 20),
@@ -166,7 +169,43 @@ class _DigitPageState extends State<DigitPage> {
                       ),
                       child: Center(
                         child: Text(
-                          result == "Hasil" ? "Hasil" : result,
+                          resultHuruf == "Hasil" ? "Hasil" : resultHuruf,
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                        child: Text(
+                          resultAngka == "Hasil" ? "Hasil" : resultAngka,
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      child: Center(
+                        child: Text(
+                          resultKarakter == "Hasil" ? "Hasil" : resultKarakter,
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.black54,
