@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Halo, bang",
+                      "Halo, bang!",
                       style: TextStyle(
                           fontSize: 24,
                           color: Colors.white,
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Silahkan pilih menu dibawah ini",
+                      "Silakan pilih menu di bawah ini",
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
